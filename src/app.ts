@@ -5,6 +5,7 @@ import errorHandler from "./middlewares/globalErrorHandler";
 
 import authRoutes from "./modules/auth/auth.route";
 import categoryRoutes from "./modules/category/category.route";
+import companyRoutes from "./modules/company/company.route";
 
 const app: Application = express();
 
@@ -21,6 +22,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/categories", categoryRoutes);
+app.use("/api/v1/companies", companyRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
