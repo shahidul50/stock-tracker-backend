@@ -1,10 +1,14 @@
 import app from "./app";
 import config from "./lib/config";
+import { connectDB } from "./lib/connectDB";
+import { seedAdmin } from "./lib/seedAdmin";
 
 const PORT = config.port || 5000;
 
 async function main() {
   try {
+    await connectDB();
+    await seedAdmin();
     app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
   } catch (err: any) {
     console.error("Failed to start server:", err);
