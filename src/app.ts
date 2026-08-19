@@ -9,6 +9,7 @@ import companyRoutes from "./modules/company/company.route";
 import itemRoutes from "./modules/item/item.route";
 import stockInRoutes from "./modules/stock-in/stockIn.route";
 import stockOutRoutes from "./modules/stock-out/stockOut.route";
+import reportRoutes from "./modules/report/report.route";
 
 const app: Application = express();
 
@@ -29,6 +30,7 @@ app.use("/api/v1/companies", companyRoutes);
 app.use("/api/v1/items", itemRoutes);
 app.use("/api/v1/stock-in", stockInRoutes);
 app.use("/api/v1/stock-out", stockOutRoutes);
+app.use("/api/v1/reports", reportRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
