@@ -7,6 +7,7 @@ import authRoutes from "./modules/auth/auth.route";
 import categoryRoutes from "./modules/category/category.route";
 import companyRoutes from "./modules/company/company.route";
 import itemRoutes from "./modules/item/item.route";
+import stockInRoutes from "./modules/stock-in/stockIn.route";
 
 const app: Application = express();
 
@@ -25,6 +26,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/categories", categoryRoutes);
 app.use("/api/v1/companies", companyRoutes);
 app.use("/api/v1/items", itemRoutes);
+app.use("/api/v1/stock-in", stockInRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
